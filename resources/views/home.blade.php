@@ -20,8 +20,14 @@
                         <p><strong>Email:</strong> {{Auth::user()->email}}<p>
                         <p><strong>Phone:</strong> {{Auth::user()->phone}}<p>
                         <p><strong>Address:</strong> {{Auth::user()->address}}<p>
-                    <a style="color: white" href="{{route('index')}}" class="btn btn-primary">Product Management</a>
-                    <a style="color: white" href="" class="btn btn-primary">Home</a>
+                    <p>
+                        @if (Auth::user()->checkIsAdmin())
+                        <a style="color: white" href="{{route('index')}}" class="btn btn-primary">Product Management</a>
+                        @endif
+                    
+                    <a style="color: white" href="http://127.0.0.1:8000/" class="btn btn-primary">Home</a>
+                    @csrf
+                    </p>
                 </div>
             </div>
         </div>

@@ -17,6 +17,7 @@ class CreateContentsTable extends Migration
             $table->increments('content_id');
             $table->string('contentname');
             $table->string('detail');
+            $table->string('image');
             $table->timestamps();
         });
     }
